@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: "statusneo"
+  description: "statusneo"  
+  annotations:
+    github.com/project-slug: noicecurse/statusneo
+spec:
+  type: service
+  owner: "guests"
+  lifecycle: experimental

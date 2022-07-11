@@ -1,0 +1,33 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: statusneo
+spec:
+  replicas: 
+  selector:
+    matchLabels:
+      app: statusneo
+  template:
+    metadata:
+      labels:
+        app: statusneo
+    spec:
+      containers:
+      - name: statusneo
+        image: noicecurse.jfrog.io/default-docker-local/noicecurse/statusneo:1
+        ports:
+        - containerPort: 8080
+      imagePullSecrets:
+        - name: jfrog
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: statusneo
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 8080
+  selector:
+    app: statusneo
