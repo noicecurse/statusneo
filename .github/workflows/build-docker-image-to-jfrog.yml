@@ -51,7 +51,7 @@ jobs:
     
     - uses: azure/aks-set-context@v1
       with:
-        creds:  echo ${{secrets.AZURE}} 
+        creds: ${{secrets.AZURE}} 
         cluster-name: mckinsey
         resource-group: rearportal
         
